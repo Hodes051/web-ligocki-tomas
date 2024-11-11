@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="cs-cz">
-<head th:replace="~{fragments/layout.html :: head}">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="~{fragments/layout.html :: head}"></head>
 <body>
 <header th:replace="~{fragments/layout.html :: header}"></header>
-<h1>REGISTER</h1>
+
+<div class="container-fluid mx-5">
+    <div class="py-2 flash-message message-error" th:text="${error}" th:if="${error}"></div>
+
+    <h2>Registrace</h2>
+    <form th:action="@{/pojisteni-app/register}" th:object="${accountDTO}" method="post" class="row col-4">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" th:field="*{email}" class="form-control"/>
+            <small class="text-danger" th:errors="*{email}"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Heslo</label>
+            <input id="password" name="password" type="password" th:field="*{password}" class="form-control"/>
+            <small class="text-danger" th:errors="*{password}"></small>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm-password">Heslo pro zopakování</label>
+            <input id="confirm-password" name="password" type="password" th:field="*{confirmPassword}" class="form-control"/>
+            <small class="text-danger" th:errors="*{confirmPassword}"></small>
+        </div>
+
+        <div class="form-group d-flex align-items-center justify-content-around mt-3">
+            <button type="submit" class="btn btn-success me-2">Registrovat</button>
+            <a th:href="@{/pojisteni-app/login}" class="text-danger">Přihlásit se</a>
+        </div>
+    </form>
+</div>
+
 <footer th:replace="~{fragments/layout.html :: footer}"></footer>
 </body>
 </html>

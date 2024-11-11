@@ -13,25 +13,32 @@ public class InsuredEntity {
     private long id;
 
     @NotBlank(message = "Jméno je povinné")
+    @Column(nullable = false)
     private String name;
 
     @NotBlank(message = "Příjmení je povinné")
+    @Column(nullable = false)
     private String surname;
 
     @NotBlank(message = "Email je povinný")
     @Email(message = "Neplatný email")
+    @Column(nullable = false, unique = true)
     private String email;
 
     @NotBlank(message = "Telefon je povinný")
+    @Column(nullable = false)
     private String phone;
 
     @NotBlank(message = "Město je povinné")
+    @Column(nullable = false)
     private String city;
 
     @NotBlank(message = "Ulice je povinná")
+    @Column(nullable = false)
     private String street;
 
     @NotBlank(message = "PSČ je povinné")
+    @Column(nullable = false)
     private String postCode;
 
     public long getId() {

@@ -8,6 +8,7 @@
     <h2>Úprava pojištěnce</h2>
     <form th:action="@{/pojisteni-app/pojistenci/edit}" th:object="${insuredDTO}" method="post">
         <input type="hidden" th:field="*{id}"/>
+        <input type="hidden" name="redirect" th:value="${param.redirect}" />
         <div class="row">
             <div class="form-group col-4">
                 <div class="pt-3">

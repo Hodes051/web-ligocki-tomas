@@ -3,6 +3,7 @@
 <head th:replace="~{fragments/layout.html :: head}"></head>
 <body>
 <header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="alert alert-warning" th:text="${warning}" th:if="${warning}"></div>
 <div class="container-fluid">
     <div class="row align-items-start">
         <div class="col-md-2 text-center">
@@ -61,8 +62,10 @@
     </table>
     <div class="d-flex justify-content-center">
         <button class="btn btn-primary me-2" role="button">Přidat pojištění</button>
-        <button class="btn btn-warning white me-2" role="button">Editovat pojištěnce</button>
-        <button class="btn btn-danger" role="button">Odstranit pojištěnce</button>
+        <a th:href="@{/pojisteni-app/pojistenci/edit/{id}(id=${insured.id}, redirect='detail')}"
+           class="btn btn-warning white me-2">Editovat pojištěnce</a>
+        <a th:href="@{/pojisteni-app/pojistenci/odstranit/{id}(id=${insured.id})}"
+           class="btn btn-danger">Odstranit pojištěnce</a>
     </div>
 </div>
 <footer th:replace="~{fragments/layout.html :: footer}"></footer>

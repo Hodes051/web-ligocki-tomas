@@ -11,7 +11,7 @@
     <div class="d-flex justify-content-center">
         <a class="btn btn-primary mt-3" href="pojistenci/novy">Nový pojištěnec</a>
     </div>
-    <div th:if="${insuredPage != null}">
+    <div th:if="${!insuredPage.content.empty}">
         <table class="table table-bordered border mt-4">
             <thead>
             <tr>
@@ -30,7 +30,7 @@
                 <td class="d-flex justify-content-center">
                     <a th:href="@{/pojisteni-app/pojistenci/odstranit/{id}(id=${insured.id})}"
                        class="btn btn-danger me-2">Odstranit</a>
-                    <a th:href="@{/pojisteni-app/pojistenci/edit/{id}(id=${insured.id})}"
+                    <a th:href="@{/pojisteni-app/pojistenci/edit/{id}(id=${insured.id}, redirect='insured')}"
                        class="btn btn-warning white">Editovat</a>
                 </td>
             </tr>

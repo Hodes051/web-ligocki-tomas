@@ -67,9 +67,16 @@ public class InsuredController {
     }
 
     @PostMapping("/pojisteni-app/pojistenci/edit")
-    public String processEditForm(@ModelAttribute InsuredDTO insuredDTO, RedirectAttributes redirectAttributes) {
+    public String processEditForm(@ModelAttribute InsuredDTO insuredDTO,
+                                  @RequestParam(value = "redirect") String redirect,
+                                  RedirectAttributes redirectAttributes) {
         insuredService.edit(insuredDTO);
         redirectAttributes.addFlashAttribute("warning", "Pojištěnec byl úspěšně editován.");
-        return "redirect:/pojisteni-app/pojistenci";
+
+        if ("detail".equals(redirect)) {
+            return "redirect:/pojisteni-app/pojistenci/detail/" + insuredDTO.getId();
+        } else {
+            return "redirect:/pojisteni-app/pojistenci";
+        }
     }
 }

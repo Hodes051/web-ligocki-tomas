@@ -3,6 +3,7 @@
 <head th:replace="~{fragments/layout.html :: head}"></head>
 <body>
 <header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="alert alert-success" th:text="${success}" th:if="${success}"></div>
 <div class="container">
     <main role="main">
         <div class="text-center">
@@ -10,7 +11,7 @@
             <br>
             <p>Tato aplikace slouží k evidenci pojištěnců a jejich pojištění.</p>
             <p>Běžný uživatel se zde může snadno zaregistrovat a prohlédnout si svá pojištění.</p>
-            <p>Administrátor dokáže přidávat pojištěnce a podle požadavků epravovat nebo odstraňovat jejich pojištění.</p>
+            <p>Administrátor dokáže přidávat pojištěnce a podle požadavků upravovat nebo odstraňovat jejich pojištění.</p>
             <br>
             <br>
             <p>Pro získání přístupu k dalším částem aplikace podle vašich oprávnění se prosím přihlaste.</p>

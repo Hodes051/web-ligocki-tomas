@@ -21,8 +21,8 @@ public class InsuredServiceImpl implements InsuredService {
 
     @Override
     public Page<InsuredDTO> getAll(Pageable pageable) {
-        return insuredRepository.findAll(pageable)  // Získání stránkovaných dat
-                .map(insuredMapper::toDTO);  // Mapování entit na DTO
+        return insuredRepository.findAll(pageable)
+                .map(insuredMapper::toDTO);
     }
 
     @Override
