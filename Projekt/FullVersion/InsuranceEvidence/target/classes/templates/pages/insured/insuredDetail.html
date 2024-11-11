@@ -6,29 +6,29 @@
 <div class="container-fluid">
     <div class="row align-items-start">
         <div class="col-md-2 text-center">
-            <img src="/images/avatar.png" height="140px" width="140px">
+            <img src="/images/avatar.png" height="140px" style="max-width: 100%; height: 140px;">
         </div>
         <div class="col-md-10">
             <h2 th:text="${insured.name} + ' ' + ${insured.surname}"></h2>
             <div class="row">
                 <div class="col-md-6">
-                    <p th:text="${insured.street}" class="mb-1"></p> <!-- Adresa -->
+                    <p th:text="${insured.street}" class="mb-1"></p>
                 </div>
                 <div class="col-md-6">
-                    <p th:text="${insured.email}" class="mb-1"></p> <!-- E-mail -->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p th:text="${insured.city}" class="mb-1"></p> <!-- Město -->
-                </div>
-                <div class="col-md-6">
-                    <p th:text="${insured.phone}" class="mb-1"></p> <!-- Telefon -->
+                    <p th:text="${insured.email}" class="mb-1"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <p th:text="${insured.postCode}"></p> <!-- PSČ -->
+                    <p th:text="${insured.city}" class="mb-1"></p>
+                </div>
+                <div class="col-md-6">
+                    <p th:text="${insured.phone}" class="mb-1"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p th:text="${insured.postCode}"></p>
                 </div>
             </div>
         </div>

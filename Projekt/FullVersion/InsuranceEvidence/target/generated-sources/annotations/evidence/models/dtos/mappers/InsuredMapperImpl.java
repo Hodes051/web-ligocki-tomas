@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-11-05T15:12:07+0100",
-    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 19.0.2 (Oracle Corporation)"
+    date = "2024-11-11T14:40:43+0100",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 22.0.1 (Oracle Corporation)"
 )
 @Component
 public class InsuredMapperImpl implements InsuredMapper {
@@ -51,5 +51,37 @@ public class InsuredMapperImpl implements InsuredMapper {
         insuredEntity.setPostCode( source.getPostCode() );
 
         return insuredEntity;
+    }
+
+    @Override
+    public void updateEntity(InsuredDTO source, InsuredEntity target) {
+        if ( source == null ) {
+            return;
+        }
+
+        target.setId( source.getId() );
+        target.setName( source.getName() );
+        target.setEmail( source.getEmail() );
+        target.setStreet( source.getStreet() );
+        target.setSurname( source.getSurname() );
+        target.setPhone( source.getPhone() );
+        target.setCity( source.getCity() );
+        target.setPostCode( source.getPostCode() );
+    }
+
+    @Override
+    public void updateDTO(InsuredEntity source, InsuredDTO target) {
+        if ( source == null ) {
+            return;
+        }
+
+        target.setId( source.getId() );
+        target.setName( source.getName() );
+        target.setEmail( source.getEmail() );
+        target.setStreet( source.getStreet() );
+        target.setSurname( source.getSurname() );
+        target.setPhone( source.getPhone() );
+        target.setCity( source.getCity() );
+        target.setPostCode( source.getPostCode() );
     }
 }

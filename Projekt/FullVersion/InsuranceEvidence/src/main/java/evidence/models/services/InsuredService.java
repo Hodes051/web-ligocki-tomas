@@ -1,22 +1,20 @@
 package evidence.models.services;
 
-import evidence.data.entities.InsuredEntity;
-import evidence.data.repositories.InsuredRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Service;
+import evidence.models.dtos.InsuredDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-@Service
-public class InsuredService {
+import java.util.List;
 
-    @Autowired
-    private InsuredRepository insuredRepository;
+public interface InsuredService {
 
+    Page<InsuredDTO> getAll(Pageable pageable);
 
-    public Page<InsuredEntity> findPaginated(int page, int size) {
-        Pageable pageable = PageRequest.of(page - 1, size);
-        return insuredRepository.findAll(pageable);
-    }
+    InsuredDTO getById(long id);
+
+    void create(InsuredDTO insured);
+
+    void edit(InsuredDTO insured);
+
+    void remove(long id);
 }
