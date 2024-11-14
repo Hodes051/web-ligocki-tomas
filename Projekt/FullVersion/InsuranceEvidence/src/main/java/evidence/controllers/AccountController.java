@@ -29,6 +29,7 @@ public class AccountController {
         return "pages/account/register";
     }
 
+
     @PostMapping("/pojisteni-app/register")
     public String register(@Valid @ModelAttribute AccountDTO accountDTO, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors())
@@ -45,7 +46,7 @@ public class AccountController {
             return "pages/account/register";
         }
 
-        redirectAttributes.addFlashAttribute("success", "Uživatel zaregistrován.");
+        redirectAttributes.addFlashAttribute("success", "Registrace proběhla úspěšně.");
         return "redirect:/pojisteni-app/login";
     }
 }

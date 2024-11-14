@@ -5,8 +5,6 @@
 <header th:replace="~{fragments/layout.html :: header}"></header>
 
 <div class="container-fluid mx-5">
-    <div class="py-2 flash-message message-error" th:text="${error}" th:if="${error}"></div>
-
     <h2>Registrace</h2>
     <form th:action="@{/pojisteni-app/register}" th:object="${accountDTO}" method="post" class="row col-4">
         <div class="form-group">

@@ -53,14 +53,14 @@
             </td>
             <td th:text="${insured.street} + ', ' + ${insured.city}"></td>
 
-            <td class="d-flex justify-content-center">
+            <td class="d-flex justify-content-center" sec:authorize="hasRole('ADMIN')">
                 <button class="btn btn-danger me-2" type="button">Odstranit</button>
                 <a class="btn btn-warning white" href="#">Editovat</a>
             </td>
         </tr>
         </tbody>
     </table>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center" sec:authorize="hasRole('ADMIN')">
         <button class="btn btn-primary me-2" role="button">Přidat pojištění</button>
         <a th:href="@{/pojisteni-app/pojistenci/edit/{id}(id=${insured.id}, redirect='detail')}"
            class="btn btn-warning white me-2">Editovat pojištěnce</a>

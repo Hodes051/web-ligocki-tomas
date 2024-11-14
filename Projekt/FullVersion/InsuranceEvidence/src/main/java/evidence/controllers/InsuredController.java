@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -30,11 +31,13 @@ public class InsuredController {
         return "pages/insured/insured";
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/pojisteni-app/pojistenci/novy")
     public String renderInsuredForm(@ModelAttribute InsuredDTO insuredDTO) {
         return "pages/insured/insuredForm";
     }
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("/pojisteni-app/pojistenci/novy")
     public String processInsuredForm(@Valid @ModelAttribute InsuredDTO insuredDTO, BindingResult result, RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
@@ -52,6 +55,7 @@ public class InsuredController {
         return "pages/insured/insuredDetail";
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/pojisteni-app/pojistenci/odstranit/{id}")
     public String deleteInsured(@PathVariable long id, RedirectAttributes redirectAttributes) {
         insuredService.remove(id);
@@ -59,6 +63,7 @@ public class InsuredController {
         return "redirect:/pojisteni-app/pojistenci";
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping("/pojisteni-app/pojistenci/edit/{id}")
     public String renderEditForm(@PathVariable long id, Model model) {
         InsuredDTO insuredDTO = insuredService.getById(id);
@@ -66,6 +71,7 @@ public class InsuredController {
         return "pages/insured/insuredEdit";
     }
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("/pojisteni-app/pojistenci/edit")
     public String processEditForm(@ModelAttribute InsuredDTO insuredDTO,
                                   @RequestParam(value = "redirect") String redirect,
