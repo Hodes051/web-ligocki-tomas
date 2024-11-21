@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head th:replace="~{fragments/layout.html :: head}"></head>
+<body>
+<header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="alert alert-warning" th:text="${warning}" th:if="${warning}"></div>
+<div class="alert alert-danger" th:text="${danger}" th:if="${danger}"></div>
+<div class="alert alert-success" th:text="${success}" th:if="${success}"></div>
+<div class="container-fluid">
+    <div class="row align-items-start">
+        <div class="col-md-2 text-center">
+            <img src="/images/avatar.png" height="140px" style="max-width: 100%; height: 140px;">
+        </div>
+        <div class="col-md-10">
+            <h2 th:text="${insured.name} + ' ' + ${insured.surname}"></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p th:text="${insured.street}" class="mb-1"></p>
+                </div>
+                <div class="col-md-6">
+                    <p th:text="${insured.email}" class="mb-1"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p th:text="${insured.city}" class="mb-1"></p>
+                </div>
+                <div class="col-md-6">
+                    <p th:text="${insured.phone}" class="mb-1"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p th:text="${insured.postCode}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h2>Sjednaná pojištění</h2>
+    <div th:if="${insurancePage.content.empty}" class="d-flex justify-content-center">
+        <p class="text-danger" th:text="${insured.name} + ' ' + ${insured.surname} + ' nemá žádná sjednaná pojištění.'"></p>
+    </div>
+    <div th:if="${!insurancePage.content.empty}">
+        <table class="table table-bordered border mt-4">
+            <thead>
+            <tr>
+                <th>Pojištění</th>
+                <th>Částka</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="insurance : ${insurancePage.content}">
+                <td>
+                    <a th:href="@{/pojisteni-app/pojisteni/detail/{id}(id=${insurance.id})}"
+                       th:text="${insurance.insuranceType}"></a>
+                </td>
+                <td th:text="${insurance.amount}"></td>
+
+                <td class="d-flex justify-content-center" sec:authorize="hasRole('ADMIN')">
+                    <a class="btn btn-danger me-2"
+                       th:href="@{/pojisteni-app/pojisteni/odstranit/{id}(id=${insurance.id})}">Odstranit</a>
+                    <a class="btn btn-warning white"
+                       th:href="@{/pojisteni-app/pojisteni/edit/{id}(id=${insurance.id})}">Editovat</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div th:if="${totalPages > 1}" class="d-flex justify-content-center mt-3">
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${currentPage == 0 ? 'disabled' : ''}">
+                    <a class="page-link"
+                       th:href="@{/pojisteni-app/pojistenci/detail/{id}(id=${insured.id}, page=${currentPage - 1})}">Předchozí</a>
+                </li>
+                <li class="page-item" th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
+                    th:classappend="${i == currentPage ? 'active' : ''}">
+                    <a class="page-link" th:href="@{/pojisteni-app/pojistenci/detail/{id}(id=${insured.id}, page=${i})}"
+                       th:text="${i + 1}"></a>
+                </li>
+                <li class="page-item" th:classappend="${currentPage == totalPages - 1 ? 'disabled' : ''}">
+                    <a class="page-link"
+                       th:href="@{/pojisteni-app/pojistenci/detail/{id}(id=${insured.id}, page=${currentPage + 1})}">Další</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center" sec:authorize="hasRole('ADMIN')">
+        <a th:href="@{/pojisteni-app/pojisteni/nove/{id}(id=${insured.id}, redirect='detail')}"
+           class="btn btn-primary me-2">Přidat pojištění</a>
+        <a th:href="@{/pojisteni-app/pojistenci/edit/{id}(id=${insured.id}, redirect='detail')}"
+           class="btn btn-warning white me-2">Editovat pojištěnce</a>
+        <a th:href="@{/pojisteni-app/pojistenci/odstranit/{id}(id=${insured.id})}"
+           class="btn btn-danger">Odstranit pojištěnce</a>
+    </div>
+</div>
+<footer th:replace="~{fragments/layout.html :: footer}"></footer>
+</body>
+</html>

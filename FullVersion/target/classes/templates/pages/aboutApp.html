@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head th:replace="~{fragments/layout.html :: head}"></head>
+<body>
+<header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="container">
+    <main role="main">
+        <div class="text-center">
+            <h1 class="mb-4">O aplikaci</h1>
+            <div class="mb-5">
+                <p>Tato aplikace slouží k evidenci pojištěnců a jejich pojištění.</p>
+                <p>Běžný uživatel se zde může snadno zaregistrovat a prohlédnout si evidenci.</p>
+                <p>Administrátor má právo přidávat nové pojištěnce a jejich pojištění.</p>
+                <p>Také může upravovat nebo odstraňovat jak pojištění, tak i pojištěnce.</p>
+            </div>
+            <div sec:authorize="isAnonymous()">
+                <p>Pro získání přístupu k dalším částem aplikace podle vašeho oprávnění se prosím přihlaste.</p>
+                <a class="btn btn-success" href="/pojisteni-app/login">Přihlásit se</a>
+                <a class="btn btn-danger" href="/pojisteni-app/register">Registrovat se</a>
+            </div>
+            <div sec:authorize="isAuthenticated()">
+                <p class="text-success">Přihlášení proběhlo úspěšně. Pokračujte dále pomocí navigace.</p>
+            </div>
+        </div>
+    </main>
+</div>
+<footer th:replace="~{fragments/layout.html :: footer}"></footer>
+</body>
+</html>

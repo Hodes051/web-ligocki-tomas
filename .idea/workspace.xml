@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5cde3143-a258-409f-8e2c-9e2c7da82091" name="Changes" comment="update 0.2">
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/src/main/java/Evidence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/src/main/java/Insured.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/src/main/java/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/target/classes/Evidence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/target/classes/Insured.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/BasicVersion/InsuranceEvidence/target/classes/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/EvidenceApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/configuration/ApplicationSecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/controllers/AccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/controllers/InsuredController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/controllers/PageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/data/entities/AccountEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/data/entities/InsuredEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/data/repositories/AccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/data/repositories/InsuredRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/dtos/AccountDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/dtos/InsuredDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/dtos/mappers/InsuredMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/exceptions/DuplicateEmailException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/exceptions/InsuredNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/exceptions/PasswordsDoNotEqualException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/services/AccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/services/AccountServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/services/InsuredService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/java/evidence/models/services/InsuredServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/static/images/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/static/images/insurance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/static/styles/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/static/styles/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/static/styles/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/fragments/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/fragments/next.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/aboutApp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/account/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/account/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/insurance/insurance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/insurance/insuranceForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/insured/insured.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/insured/insuredDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/insured/insuredEdit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/src/main/resources/templates/pages/insured/insuredForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/EvidenceApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/controllers/AccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/controllers/InsuredController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/controllers/PageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/data/entities/InsuredEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/data/repositories/InsuredRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/models/dtos/InsuredDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/models/dtos/mappers/InsuredMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/models/dtos/mappers/InsuredMapperImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/evidence/models/services/InsuredService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/static/images/avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/static/images/insurance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/static/styles/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/static/styles/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/static/styles/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/fragments/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/fragments/next.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/aboutApp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/account/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/account/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/events.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/insurance/insurance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/insurance/insuranceForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/insured/insured.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/insured/insuredDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/classes/templates/pages/insured/insuredForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projekt/FullVersion/InsuranceEvidence/target/generated-sources/annotations/evidence/models/dtos/mappers/InsuredMapperImpl.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hodes051&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Hodes051/itnetwork-kurz-ligocki-tomas.git&quot;,
+    &quot;accountId&quot;: &quot;8a142732-a392-48bd-9a65-fbd6fbe032ca&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2ohG2f2qFE4NIVcVq8CTyE3nEag" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.EvidenceApp.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ligoc/Dropbox/InsuranceEvidence/BasicVersion",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cde3143-a258-409f-8e2c-9e2c7da82091" name="Changes" comment="" />
+      <created>1731314187880</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731314187880</updated>
+    </task>
+    <task id="LOCAL-00001" summary="redy">
+      <option name="closed" value="true" />
+      <created>1731344300719</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731344300719</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update 0.2">
+      <option name="closed" value="true" />
+      <created>1731599442134</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731599442134</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update 0.2">
+      <option name="closed" value="true" />
+      <created>1731617257342</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731617257342</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="redy" />
+    <MESSAGE value="update 0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 0.2" />
+  </component>
+</project>

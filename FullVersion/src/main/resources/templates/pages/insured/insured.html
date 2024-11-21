@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head th:replace="~{fragments/layout.html :: head}"></head>
+<body>
+<header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="alert alert-success" th:text="${success}" th:if="${success}"></div>
+<div class="alert alert-danger" th:text="${danger}" th:if="${danger}"></div>
+<div class="alert alert-warning" th:text="${warning}" th:if="${warning}"></div>
+<div class="container">
+    <h2>Pojištěnci</h2>
+    <div th:if="${insuredPage.content.empty}" class="d-flex justify-content-center">
+        <p class="text-danger">Evidence je prázdná.</p>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary mt-3" href="pojistenci/novy" sec:authorize="hasRole('ADMIN')">Nový pojištěnec</a>
+    </div>
+    <div th:if="${!insuredPage.content.empty}">
+        <table class="table table-bordered border mt-4">
+            <thead>
+            <tr>
+                <th>Jméno</th>
+                <th>Bydliště</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="insured : ${insuredPage.content}">
+                <td>
+                    <a th:href="@{/pojisteni-app/pojistenci/detail/{id}(id=${insured.id})}"
+                       th:text="${insured.name} + ' ' + ${insured.surname}"></a>
+                </td>
+                <td th:text="${insured.street} + ', ' + ${insured.city}"></td>
+                <td class="d-flex justify-content-center" sec:authorize="hasRole('ADMIN')">
+                    <a th:href="@{/pojisteni-app/pojistenci/odstranit/{id}(id=${insured.id})}"
+                       class="btn btn-danger me-2">Odstranit</a>
+                    <a th:href="@{/pojisteni-app/pojistenci/edit/{id}(id=${insured.id}, redirect='insured')}"
+                       class="btn btn-warning white">Editovat</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div th:if="${totalPages > 1}" class="d-flex justify-content-center mt-3">
+            <ul class="pagination">
+                <li class="page-item" th:classappend="${currentPage == 0 ? 'disabled' : ''}">
+                    <a class="page-link" th:href="@{/pojisteni-app/pojistenci(page=${currentPage - 1})}">Předchozí</a>
+                </li>
+                <li class="page-item" th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
+                    th:classappend="${i == currentPage ? 'active' : ''}">
+                    <a class="page-link" th:href="@{/pojisteni-app/pojistenci(page=${i})}" th:text="${i + 1}"></a>
+                </li>
+                <li class="page-item" th:classappend="${currentPage == totalPages - 1 ? 'disabled' : ''}">
+                    <a class="page-link" th:href="@{/pojisteni-app/pojistenci(page=${currentPage + 1})}">Další</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer th:replace="~{fragments/layout.html :: footer}"></footer>
+</body>
+</html>

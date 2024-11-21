@@ -1,0 +1,17 @@
+a {
+text-decoration: none;
+}
+
+.white {
+color: white;
+}
+
+.border {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn-warning:hover {
+        background-color: #d39e00;
+        color: white;
+        transition: background-color 0.3s, color 0.3s;
+}

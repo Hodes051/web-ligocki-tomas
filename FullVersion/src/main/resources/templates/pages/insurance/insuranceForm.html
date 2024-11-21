@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head th:replace="~{fragments/layout.html :: head}">
+</head>
+<body>pojištění zdraví a životní pojištění
+<header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="container-fluid mx-5">
+    <h2 th:text="'Přidat pojištění k ' + ${insured.name} + ' ' + ${insured.surname}"></h2>
+    <form th:action="@{/pojisteni-app/pojisteni/nove/{id}(id=${insured.id})}" th:object="${insuranceDTO}" method="post">
+        <div class="form-group col-8">
+            <div class="pt-3">
+                <label>Druh pojištění</label>
+                <select id="druhPojisteni" th:field="*{insuranceType}" class="form-control">
+                    <option value="" selected disabled style="display: none" class="text-muted">Vyberte druh pojištění
+                    </option>
+                    <option value="Pojištění majetku">Pojištění majetku</option>
+                    <option value="Pojištění zdraví">Pojištění zdraví</option>
+                    <option value="Pojištění odpovědnosti">Pojištění odpovědnosti</option>
+                    <option value="Cestovní pojištění">Cestovní pojištění</option>
+                    <option value="Životní pojištění">Životní pojištění</option>
+                </select>
+                <small class="text-danger" th:errors="*{insuranceType}"></small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-4">
+                <div class="pt-3">
+                    <label for="castka">Částka</label>
+                    <input type="number" id="castka" th:field="*{amount}" class="form-control" placeholder="10000000"
+                           th:value="${insuranceDTO.amount == null ? '' : insuranceDTO.amount}">
+                    <small class="text-danger" th:errors="*{amount}"></small>
+                </div>
+                <div class="pt-3">
+                    <label for="platnostOd">Platnost od</label>
+                    <input type="date" id="platnostOd" th:field="*{dateFrom}" class="form-control">
+                    <small class="text-danger" th:errors="*{dateFrom}"></small>
+                </div>
+            </div>
+            <div class="form-group col-4">
+                <div class="pt-3">
+                    <label for="predmetPojisteni">Předmět pojištění</label>
+                    <input type="text" id="predmetPojisteni" th:field="*{insuredSubject}" class="form-control"
+                           placeholder="Byt">
+                    <small class="text-danger" th:errors="*{insuredSubject}"></small>
+                </div>
+                <div class="pt-3">
+                    <label for="platnostDo">Platnost do</label>
+                    <input type="date" id="platnostDo" th:field="*{dateTo}" class="form-control">
+                    <small class="text-danger" th:errors="*{dateTo}"></small>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center pt-4">
+            <button class="btn btn-primary px-4" type="submit">Uložit</button>
+        </div>
+    </form>
+</div>
+<footer th:replace="~{fragments/layout.html :: footer}"></footer>
+</body>
+</html>
