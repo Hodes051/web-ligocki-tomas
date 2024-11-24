@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cde3143-a258-409f-8e2c-9e2c7da82091" name="Changes" comment="update 0.2">
-      <change afterPath="$PROJECT_DIR$/BasicVersion/target/classes/InsuredData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BasicVersion/target/classes/ValidationControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullVersion/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FullVersion/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullVersion/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FullVersion/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullVersion/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullVersion/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FullVersion/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullVersion/target/generated-sources/annotations/evidence/models/dtos/mappers/InsuranceMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullVersion/target/generated-sources/annotations/evidence/models/dtos/mappers/InsuranceMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FullVersion/target/generated-sources/annotations/evidence/models/dtos/mappers/InsuredMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/FullVersion/target/generated-sources/annotations/evidence/models/dtos/mappers/InsuredMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullVersion/target/generated-sources/annotations/evidence/models/dtos/mappers/InsuranceMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FullVersion/target/generated-sources/annotations/evidence/models/dtos/mappers/InsuredMapperImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +59,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ligoc/Dropbox/InsuranceEvidence/FullVersion",
+    "last_opened_file_path": "C:/Users/ligoc/Dropbox/InsuranceEvidence/BasicVersion",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15332031",
     "project.structure.side.proportion": "0.2",
@@ -104,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731617257342</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update 0.2">
+      <option name="closed" value="true" />
+      <created>1732230077086</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732230077086</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
