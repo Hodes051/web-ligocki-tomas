@@ -2,13 +2,16 @@ package insuranceEvidence;
 
 import java.util.Scanner;
 
+// Třída UserInputValidation slouží k vkládání a ověřování dat zadaných uživatelem.
 public class UserInputValidation {
     private Scanner scanner;
 
+    // Konstruktor k inicializaci potřebných závislotí.
     public UserInputValidation(Scanner scanner) {
         this.scanner = scanner;
     }
 
+    // Obecná metoda pro získání textového vstupu a jeho validace.
     public String inputTextWithValidation(String prompt, String errorMessage) {
         String input;
         do {
@@ -23,14 +26,17 @@ public class UserInputValidation {
         return input;
     }
 
+    // Metoda k získání jména a jeho validace pomocí obecné textové validace.
     public String nameInput() {
         return inputTextWithValidation("Zadejte jméno pojištěného:", "Jméno je povinné.");
     }
 
+    // Metoda k získání příjmení a jeho validace pomocí obecné textové validace.
     public String surnameInput() {
         return inputTextWithValidation("Zadejte příjmení:", "Příjmení je povinné.");
     }
 
+    // Metoda pro získání a validací telefonního čísla.
     public String phoneInput() {
         String phoneNumber;
         do {
@@ -47,6 +53,7 @@ public class UserInputValidation {
         return phoneNumber;
     }
 
+    // Metoda pro získání a validaci věku.
     public int ageInput() {
         int age = -1;
         boolean validAge = false;

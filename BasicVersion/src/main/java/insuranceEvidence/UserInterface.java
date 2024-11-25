@@ -2,18 +2,22 @@ package insuranceEvidence;
 
 import java.util.Scanner;
 
+// Třída UserInterface slouží k navigaci uživatelem v applikaci.
 public class UserInterface {
     private Scanner scanner;
     private EvidenceControl evidenceControl;
 
+    // Konstruktor k inicializaci potřebných závislotí.
     public UserInterface(Scanner scanner) {
         this.scanner = scanner;
         this.evidenceControl = new EvidenceControl(scanner);
     }
 
+    // Metoda pro zobrazení hlavního menu a získání uživatelského vstupu pro akci.
     public void getInterface() {
         int action = 0;
         while (action != 4) {
+            // Zobrazení hlavního menu pro uživatele.
             System.out.println("-----------------------------\n" +
                     "Evidence pojištěných \n" +
                     "-----------------------------\n" +
@@ -30,17 +34,17 @@ public class UserInterface {
                 }
                 System.out.println();
                 switch (action) {
-                    case 1:
+                    case 1: // Akce pro přidání nového pojištěného.
                         evidenceControl.addToEvidence();
                         System.out.println("\nData byla uložena. Pokračujte libovolnou klávesou...");
                         scanner.nextLine();
                         break;
-                    case 2:
+                    case 2: // Akce pro zobrazení všech pojištěných.
                         evidenceControl.showEntireEvidence();
                         System.out.println("\nPokračujte libovolnou klávesou...");
                         scanner.nextLine();
                         break;
-                    case 3:
+                    case 3: // Akce pro vyhledání pojištěného podle jména a příjmení.
                         System.out.println("Zadejte jméno pojištěného:");
                         String name = scanner.nextLine().trim();
                         System.out.println("Zadejte příjmení:");
@@ -52,7 +56,7 @@ public class UserInterface {
                         System.out.println("\nPokračujte libovolnou klávesou...");
                         scanner.nextLine();
                         break;
-                    case 4:
+                    case 4: // Akce pro ukončení programu.
                         System.out.println("Program ukončen");
                         break;
                 }
