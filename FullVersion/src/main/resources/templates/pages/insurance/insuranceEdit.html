@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="cs-cz">
-<head th:replace="~{fragments/layout.html :: head}">
-</head>
+<head th:replace="~{fragments/layout.html :: head}"></head>
 <body>pojištění zdraví a životní pojištění
 <header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="alert alert-danger" th:text="${errorMessage}" th:if="${errorMessage}"></div>
 <div class="container-fluid mx-5">
     <h2 th:text="'Upravit pojištění u ' + ${insured.name} + ' ' + ${insured.surname}"></h2>
-    <form th:action="@{/pojisteni-app/pojisteni/edit/{id}(id=${insured.id})}" th:object="${insuranceDTO}" method="post">
+    <form th:action="@{/pojisteni-app/pojisteni/edit}" th:object="${insuranceDTO}" method="post">
         <input type="hidden" th:field="*{id}"/>
+        <input type="hidden" name="redirect" th:value="${insured.id}" />
         <div class="form-group col-8">
             <div class="pt-3">
                 <label>Druh pojištění</label>

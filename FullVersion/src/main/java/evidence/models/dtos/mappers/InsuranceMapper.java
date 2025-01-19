@@ -12,6 +12,7 @@ public interface InsuranceMapper {
     @Mapping(source = "insured.id", target = "insuredId")
     InsuranceDTO toDTO(InsuranceEntity source);
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(source = "insuredId", target = "insured.id")
     InsuranceEntity toEntity(InsuranceDTO source);
 

@@ -10,11 +10,11 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 @Controller
 public class InsuranceController {
@@ -75,9 +75,35 @@ public class InsuranceController {
     @GetMapping("/pojisteni-app/pojisteni/edit/{id}")
     public String renderEditForm(@PathVariable long id, Model model) {
         InsuranceDTO insuranceDTO = insuranceService.getById(id);
-        InsuredDTO insured = insuredService.getById(id);
+        InsuredDTO insured = insuredService.getById(insuranceDTO.getInsuredId());
         model.addAttribute("insured", insured);
         model.addAttribute("insuranceDTO", insuranceDTO);
         return "pages/insurance/insuranceEdit";
+    }
+
+    @Secured("ROLE_ADMIN")
+    @PostMapping("/pojisteni-app/pojisteni/edit")
+    public String processEditForm(@ModelAttribute InsuranceDTO insuranceDTO,
+                                  @RequestParam(value = "redirect") Long insuredId,
+                                  RedirectAttributes redirectAttributes) {
+        if (Arrays.stream(new Object[] {insuranceDTO.getInsuranceType(), insuranceDTO.getAmount(), insuranceDTO.getInsuredSubject(), insuranceDTO.getDateFrom(), insuranceDTO.getDateTo()})
+                .anyMatch(Objects::isNull)) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Všechna pole jsou povinná.");
+            return "redirect:/pojisteni-app/pojisteni/edit/" + insuranceDTO.getId();
+        } else if (!insuranceDTO.getDateFrom().isBefore(insuranceDTO.getDateTo())) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Platnost od musí být menší než platnost do.");
+            return "redirect:/pojisteni-app/pojisteni/edit/" + insuranceDTO.getId();
+        }
+        insuranceDTO.setInsuredId(insuranceDTO.getId());
+        insuranceService.edit(insuranceDTO);
+        redirectAttributes.addFlashAttribute("warning", "Pojištění bylo úspěšně editováno.");
+        return "redirect:/pojisteni-app/pojistenci/detail/" + insuredId;
+    }
+
+    @GetMapping("/pojisteni-app/pojisteni/detail/{id}")
+    public String renderInsuranceDetail(@PathVariable long id, Model model) {
+        InsuranceDTO insuranceDTO = insuranceService.getById(id);
+        model.addAttribute("insuranceDTO", insuranceDTO);
+        return "pages/insurance/insuranceDetail";
     }
 }

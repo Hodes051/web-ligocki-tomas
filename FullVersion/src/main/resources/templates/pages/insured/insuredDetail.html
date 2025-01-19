@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs-cz">
 <head th:replace="~{fragments/layout.html :: head}"></head>
-<body>
+<body class="d-flex flex-column">
 <header th:replace="~{fragments/layout.html :: header}"></header>
 <div class="alert alert-warning" th:text="${warning}" th:if="${warning}"></div>
 <div class="alert alert-danger" th:text="${danger}" th:if="${danger}"></div>
@@ -15,23 +15,23 @@
             <h2 th:text="${insured.name} + ' ' + ${insured.surname}"></h2>
             <div class="row">
                 <div class="col-md-6">
-                    <p th:text="${insured.street}" class="mb-1"></p>
+                    <p><strong>Ulice:</strong> <span th:text="${insured.street}"></span></p>
                 </div>
                 <div class="col-md-6">
-                    <p th:text="${insured.email}" class="mb-1"></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p th:text="${insured.city}" class="mb-1"></p>
-                </div>
-                <div class="col-md-6">
-                    <p th:text="${insured.phone}" class="mb-1"></p>
+                    <p><strong>Email:</strong> <span th:text="${insured.email}"></span></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <p th:text="${insured.postCode}"></p>
+                    <p><strong>Město:</strong> <span th:text="${insured.city}"></span></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Telefon:</strong> <span th:text="${insured.phone}"></span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>PSČ:</strong> <span th:text="${insured.postCode}"></span></p>
                 </div>
             </div>
         </div>
@@ -95,6 +95,10 @@
            class="btn btn-danger">Odstranit pojištěnce</a>
     </div>
 </div>
-<footer th:replace="~{fragments/layout.html :: footer}"></footer>
+<footer class="text-muted py-3 footer sticky-footer mt-auto">
+    <div class="container-fluid">
+        &copy; 2025 - PojištěníApp
+    </div>
+</footer>
 </body>
 </html>

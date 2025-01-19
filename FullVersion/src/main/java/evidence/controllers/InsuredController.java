@@ -6,7 +6,6 @@ import evidence.models.exceptions.DuplicateEmailException;
 import evidence.models.services.InsuranceService;
 import evidence.models.services.InsuredService;
 import jakarta.validation.Valid;
-import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,6 +16,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Arrays;
 
 @Controller
 public class InsuredController {
@@ -98,6 +99,13 @@ public class InsuredController {
     public String processEditForm(@ModelAttribute InsuredDTO insuredDTO,
                                   @RequestParam(value = "redirect") String redirect,
                                   RedirectAttributes redirectAttributes) {
+        if (Arrays.stream(new Object[] {insuredDTO.getPostCode(),insuredDTO.getName(),insuredDTO.getSurname(),insuredDTO.getEmail(),insuredDTO.getPhone(),insuredDTO.getCity(),insuredDTO.getStreet()})
+                .map(obj -> (String) obj)
+                .anyMatch(String::isEmpty)) {
+            System.out.println("Null value detected!");
+            redirectAttributes.addFlashAttribute("errorMessage", "Všechna pole jsou povinná.");
+            return "redirect:/pojisteni-app/pojistenci/edit/" + insuredDTO.getId();
+        }
         insuredService.edit(insuredDTO);
         redirectAttributes.addFlashAttribute("warning", "Pojištěnec byl úspěšně editován.");
 

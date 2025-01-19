@@ -4,6 +4,7 @@
 </head>
 <body>
 <header th:replace="~{fragments/layout.html :: header}"></header>
+<div class="alert alert-danger" th:text="${errorMessage}" th:if="${errorMessage}"></div>
 <div class="container-fluid mx-5">
     <h2>Úprava pojištěnce</h2>
     <form th:action="@{/pojisteni-app/pojistenci/edit}" th:object="${insuredDTO}" method="post">
